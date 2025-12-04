@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const apiRoutes = require('./routes/api');
 
+
 const app = express();
 // const PORT = process.env.PORT || 5001;
 
@@ -46,6 +47,9 @@ app.use(async (req, res, next) => {
 });
 
 // API Routes
+app.get("/", (req, res) => {
+  res.send("Backend API is running 🚀");
+});
 app.use('/api', apiRoutes);
 
 // // Start server
